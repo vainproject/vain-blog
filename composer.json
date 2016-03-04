@@ -1,0 +1,31 @@
+{
+    "name": "vainproject/vain-blog",
+    "description": "This is a blog module for the vain platform. It provides a basic posting systen and also supports comments.",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Florian Greinus",
+            "email": "florian.greinus@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.0",
+        "orchestra/testbench": "^3.1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Blog\\": "src/Blog/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Blog\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Blog",
+    "alias": "blog",
+    "description": "This is a blog module for the vain platform. It provides a basic posting systen and also supports comments.",
+    "keywords": [],
+    "active": 0,
+    "order": 2,
+    "providers": [
+        "Modules\\Blog\\Providers\\BlogServiceProvider",
+        "Modules\\Blog\\Providers\\EventServiceProvider",
+        "Modules\\Blog\\Providers\\ConfigServiceProvider",
+        "Modules\\Blog\\Providers\\RouteServiceProvider",
+        "Modules\\Blog\\Providers\\AuthServiceProvider"
+    ],
+    "aliases":{}
+}
