@@ -27,7 +27,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         parent::boot($router);
 
-        require base_path('modules/Blog/Http/breadcrumbs.php');
+        require  __DIR__ . '/../Http/breadcrumbs.php';
     }
 
     /**
@@ -40,7 +40,7 @@ class RouteServiceProvider extends ServiceProvider
     public function map(Router $router)
     {
         $router->group(['namespace' => $this->namespace], function ($router) {
-            require base_path('modules/Blog/Http/routes.php');
+            require  __DIR__ . '/../Http/routes.php';
         });
     }
 }
