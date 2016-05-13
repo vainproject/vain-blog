@@ -10,7 +10,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $this->authorize('blog.post.show');
+        $this->authorize('index', Post::class);
 
         $posts = Post::with('user', 'category', 'comments')->published()->simplePaginate(config('blog.posts_per_page'));
 
