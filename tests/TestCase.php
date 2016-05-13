@@ -2,8 +2,8 @@
 
 namespace Modules\Blog\Test;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use Modules\Blog\Providers\BlogServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra
 {
