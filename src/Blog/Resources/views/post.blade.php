@@ -53,6 +53,7 @@
 
             {{-- Comment section --}}
             @can('blog.comment.show')
+                <a name="comments">{{-- comment jump anchor --}}</a>
                 <h3>@choice('blog::blog.comment.count', $post->comments->count())</h3>
                 <div class="media">
                     <hr />

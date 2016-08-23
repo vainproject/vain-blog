@@ -18,13 +18,14 @@
                     <div class="post-date">
                         {{ $post->created_at->formatLocalized('%d. %B, %Y') }} |
                         {!! link_to_route('user.profile', $post->user->name, ['id' => $post->user->id]) !!}
-                        <span><a href="{{ route('blog.post.show', $post->slug) }}">@choice('blog::blog.comment.count', $post->comments->count())</a></span>
+                        <span><a href="{{ route('blog.post.show', $post->slug) }}#comments">@choice('blog::blog.comment.count', $post->comments->count())</a></span>
                     </div>
                     <h2>
                         <a href="{{ route('blog.post.show', $post->slug) }}">{{ $post->content->title }}</a>
                     </h2>
                     <p>
-                        {!! $post->content->teaser !!} <a href="{{ route('blog.post.show', $post->slug) }}">@lang('blog::blog.post.more')</a>
+                        {!! $post->content->teaser !!} <a
+                                href="{{ route('blog.post.show', $post->slug) }}">@lang('blog::blog.post.more')</a>
                     </p>
                 </article>
             @endforeach

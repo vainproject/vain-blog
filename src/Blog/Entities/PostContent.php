@@ -38,7 +38,7 @@ class PostContent extends Model
      */
     public function getTeaserAttribute($value)
     {
-        $parts = explode('<hr />', $this->text, 1);
+        $parts = $this->prepareTeaserAndContent();
 
         return reset($parts);
     }
@@ -52,8 +52,18 @@ class PostContent extends Model
      */
     public function getBodyAttribute($value)
     {
-        $parts = explode('<hr />', $this->text, 1);
+        $parts = $this->prepareTeaserAndContent();
 
         return count($parts) > 1 ? end($parts) : '';
+    }
+
+    /**
+     * separates the text into teaser and content sections
+     *
+     * @return array
+     */
+    private function prepareTeaserAndContent()
+    {
+        return preg_split('/<hr\s*\/?>/', $this->text, 2);
     }
 }
