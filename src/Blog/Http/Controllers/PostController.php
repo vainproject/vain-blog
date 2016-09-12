@@ -12,7 +12,10 @@ class PostController extends Controller
     {
         $this->authorize('index', Post::class);
 
-        $posts = Post::with('user', 'category', 'comments')->published()->simplePaginate(config('blog.posts_per_page'));
+        $posts = Post::with('user', 'category', 'comments')
+            ->published()
+            ->orderBy('published_at', 'desc')
+            ->simplePaginate(config('blog.posts_per_page'));
 
         return view('blog::index')->with('posts', $posts);
     }
@@ -25,7 +28,7 @@ class PostController extends Controller
             ->first();
 
         if ($post === null) {
-            throw new NotFoundHttpException('post with slug \''.$slug.'\' not found');
+            throw new NotFoundHttpException('post with slug \'' . $slug . '\' not found');
         }
 
         $this->authorize($post);
